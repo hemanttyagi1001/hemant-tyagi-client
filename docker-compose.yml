@@ -1,6 +1,9 @@
 services:
   client:
-    build: .
+    build:
+      context: .
+      args:
+        VITE_GOOGLE_MAPS_API_KEY: ${VITE_GOOGLE_MAPS_API_KEY}
     container_name: hemant-tyagi-saas-client
     ports:
       - "4173:4173"

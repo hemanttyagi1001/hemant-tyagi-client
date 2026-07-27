@@ -3,6 +3,11 @@ FROM node:22-alpine AS build
 
 WORKDIR /app
 
+# Vite inlines VITE_* env vars at build time, so the Maps key must be
+# available here (the .env file is excluded via .dockerignore).
+ARG VITE_GOOGLE_MAPS_API_KEY
+ENV VITE_GOOGLE_MAPS_API_KEY=$VITE_GOOGLE_MAPS_API_KEY
+
 COPY package.json package-lock.json ./
 RUN npm ci
 
