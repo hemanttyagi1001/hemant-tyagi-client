@@ -44,11 +44,11 @@ export default function ContactSection() {
       <div className="xl:w-4/5 mt-6">
         <ul className="space-y-3">
           <li className="list-none inline-block px-4 py-2 border border-black/20 border-dashed rounded-full me-2 text-pColor hover:text-black transition ease-linear duration-100 dark:text-white/70 dark:border-white/20 dark:hover:text-white">Phone: +91-9548550009</li>
-          <li className="list-none inline-block px-4 py-2 border border-black/20 border-dashed rounded-full me-2 text-pColor hover:text-black transition ease-linear duration-100 dark:text-white/70 dark:border-white/20 dark:hover:text-white">Email: info@hemanttyagi.in</li>
+          <li className="list-none inline-block px-4 py-2 border border-black/20 border-dashed rounded-full me-2 text-pColor hover:text-black transition ease-linear duration-100 dark:text-white/70 dark:border-white/20 dark:hover:text-white">Email: hemanttyagi1001@gmail.com</li>
           <li className="list-none inline-block px-4 py-2 border border-black/20 border-dashed rounded-full me-2 text-pColor hover:text-black transition ease-linear duration-100 dark:text-white/70 dark:border-white/20 dark:hover:text-white">Location: MuzaffarNagar, Uttar Pradesh, India</li>
         </ul>
       </div>
-      <form ref={formRef} className="space-y-8 mt-8 lg:mt-12" onSubmit={handleSubmit}>
+      {/* <form ref={formRef} className="space-y-8 mt-8 lg:mt-12" onSubmit={handleSubmit}>
         <div className="flex w-full space-x-4">
           <div className="w-1/2">
             <input
@@ -74,11 +74,11 @@ export default function ContactSection() {
         <button className="inline-block bg-black text-white px-8 py-4 rounded-full font-mono text-sm transition linear duration-100 dark:bg-white/15 dark:hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed" type="submit" disabled={sending}>
           {sending ? 'Sending...' : 'Send Message'}
         </button>
-      </form>
+      </form> 
       <div className="submit-result mt-4">
         {status === 'success' && <span className="text-green-700 transition-all duration-200 ease-out">Thank you! Your Message has been sent.</span>}
         {status === 'error' && <span className="text-red-600 transition-all duration-200 ease-out">Something went wrong, Please try again!</span>}
-      </div>
+      </div>*/}
     </div>
   );
 }
