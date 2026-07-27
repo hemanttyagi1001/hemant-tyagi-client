@@ -9,11 +9,19 @@ env:
 
 jobs:
   deploy:
-    runs-on: hemant-tyagi-vps
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-
-      - name: Build and deploy
-        run: |
-          docker compose -f docker-compose.yml up -d --build
-          docker image prune -f
+      - name: Deploy to VPS over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            set -e
+            cd /root/apps/hemant-tyagi-client
+            git fetch origin main
+            git reset --hard origin/main
+            docker compose -f docker-compose.yml up -d --build
+            docker image prune -f
