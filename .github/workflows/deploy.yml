@@ -24,5 +24,7 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             docker compose -f docker-compose.yml down --remove-orphans
+            # Defensive: remove any leftover container by name not owned by compose
+            docker rm -f hemant-tyagi-saas-client 2>/dev/null || true
             docker compose -f docker-compose.yml up -d --build --force-recreate
             docker image prune -f
