@@ -2,13 +2,16 @@ name: Deploy
 
 on:
   push:
-    branches: [prod]
+    branches: [main]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   deploy:
     runs-on: halexo-vps
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Build and deploy
         run: |
