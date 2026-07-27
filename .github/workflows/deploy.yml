@@ -23,5 +23,6 @@ jobs:
             cd /root/apps/hemant-tyagi-client
             git fetch origin main
             git reset --hard origin/main
-            docker compose -f docker-compose.yml up -d --build
+            docker compose -f docker-compose.yml down --remove-orphans
+            docker compose -f docker-compose.yml up -d --build --force-recreate
             docker image prune -f
