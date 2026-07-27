@@ -16,8 +16,8 @@ export default function HomePage() {
       <ServicesSection />
       <TestimonialSection />
       <ResumeSection />
-      <ClientsSection />
-      <BlogSection />
+      {/* <ClientsSection />
+      <BlogSection /> */}
       <ContactSection />
       <MapSection />
     </>
